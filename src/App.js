@@ -15,15 +15,19 @@ class App extends Component {
 
   onClickingTrue = () => {
     console.log("Hi there!...clicking true");
-    
-    /*
-    this.setState((currentState) => (
-      {numQuestions : currentState.numQuestions + 1}))
-     */
+  	
+    this.incrementNumQuestion();
   }
 
   onClickingFalse = () => {
     console.log("Hi there!...clicking false");
+    
+    this.incrementNumQuestion();
+  }
+
+  incrementNumQuestion = () => {
+    this.setState((state) => (
+      {numQuestions : state.numQuestions + 1}))
   }
 
   render() {
