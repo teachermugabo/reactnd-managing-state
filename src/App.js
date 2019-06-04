@@ -13,17 +13,21 @@ class App extends Component {
     numCorrect: 0,
   }
 
-  onClickingTrue() {
+  onClickingTrue = () => {
     console.log("Hi there!...clicking true");
+    
+    /*
     this.setState((currentState) => (
       {numQuestions : currentState.numQuestions + 1}))
+     */
   }
 
-  onClickingFalse() {
+  onClickingFalse = () => {
     console.log("Hi there!...clicking false");
   }
 
   render() {
+    
     return (
       <div className="App">
         <header className="App-header">
@@ -35,8 +39,8 @@ class App extends Component {
           <div className="equation">
             <p className="text">{`${value1} + ${value2} + ${value3} = ${proposedAnswer}`}</p>
           </div>
-          <button onClick={() => this.onClickingTrue}>True</button>
-          <button onClick={() => this.onClickingFalse}>False</button>
+          <button onClick={this.onClickingTrue}>True</button>
+          <button onClick={this.onClickingFalse}>False</button>
           <p className="text">
             Your Score: {this.state.numCorrect}/{this.state.numQuestions}
           </p>
