@@ -10,13 +10,17 @@ const proposedAnswer = Math.floor(Math.random() * 3) + value1 + value2 + value3;
 class App extends Component {
   state = {
     numQuestions: 0,
-    numcurrect: 0,
+    numCorrect: 0,
   }
 
-  const onClickingTrue = () => {
-  };
+  onClickingTrue() {
+    console.log("Hi there!...clicking true");
+    this.setState((currentState) => (
+      {numQuestions : currentState.numQuestions + 1}))
+  }
 
-  const onClickingFalse = () = {
+  onClickingFalse() {
+    console.log("Hi there!...clicking false");
   }
 
   render() {
@@ -34,7 +38,7 @@ class App extends Component {
           <button onClick={() => this.onClickingTrue}>True</button>
           <button onClick={() => this.onClickingFalse}>False</button>
           <p className="text">
-            Your Score: {numCorrect}/{numQuestions}
+            Your Score: {this.state.numCorrect}/{this.state.numQuestions}
           </p>
         </div>
       </div>
